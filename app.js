@@ -1,21 +1,29 @@
-const express = require('express')
-const bodyParser = require('body-parser')
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
-require('dotenv').config()
+require('dotenv').config();
 
+const app = express();
 
+app.use(bodyParser.urlencoded({ extended: false }));
 
-const app = express()
+app.set('view engine', 'ejs');
+app.set('views', 'views');
 
-app.use(bodyParser.urlencoded({extended:false}))
+app.get('/', (req, res, next) => {
+  res.render('index');
+});
 
-app.set('view engine','ejs')
-app.set('views','views')
+app.post('/shortUrls', (req, res, next) => {});
 
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then((result) => {
+      app.listen(process.env.PORT || 5000);
 
-app.get('/',(req,res,next)=>{
-    res.render('index')
-})
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
-
-app.listen(process.env.PORT || 5000)

@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
     <title>Document</title>
-</head>
-<body>
-    <h1> URL  Shrinker</h1>
-    <form action="" method="post">
-        <label for="fullUrl" type="text"> Url </label>
-        <input type="url" name="fullUrl" id="fullUrl">
-        <button type="submit"> Shrink</button>
-    </form>
+  </head>
+  <body>
+    <div class="container">
+      <h1>URL Shrinker</h1>
+      <form action="/shortUrls" method="post" class="my-4 form-inline">
+        <label class="sr-only" for="fullUrl" type="text"> Url </label>
+        <input
+          required
+          placeholder="Url"
+          type="url"
+          name="fullUrl"
+          id="fullUrl"
+          class="form-control col mr-2"
+        />
+        <button class="btn btn-success" type="submit">Shrink</button>
+      </form>
 
-    <table>
+      <table class="table table-striped table-responsive">
         <thead>
-            <tr>
-                <th>full Url</th>
-                <th>short Url</th>
-                <th>Clicks</th>
-            </tr>
+          <tr>
+            <th>full Url</th>
+            <th>short Url</th>
+            <th>Clicks</th>
+          </tr>
         </thead>
-        <tbody> 
-            <td><a href="https://www.sendme.ng">https://www.sendme.ng</a></td>
-            <td><a href="/12345">123456</a></td>
-            <td>10</td>
+        <tbody>
+          <td><a href="https://www.sendme.ng">https://www.sendme.ng</a></td>
+          <td><a href="/12345">123456</a></td>
+          <td>10</td>
         </tbody>
-    </table>
-</body>
+      </table>
+    </div>
+  </body>
 </html>
