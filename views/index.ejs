@@ -37,9 +37,15 @@
           </tr>
         </thead>
         <tbody>
-          <td><a href="https://www.sendme.ng">https://www.sendme.ng</a></td>
-          <td><a href="/12345">123456</a></td>
-          <td>10</td>
+            <% shortUrls.forEach(shortUrl =>{ %>
+                <tr>
+                    <td><a href=" <%= shortUrl.fullUrl %>"> <%= shortUrl.fullUrl %> </a></td>
+                    <td><a href="<%= shortUrl.shortUrl %>">  <%= shortUrl.shortUrl%> </a></td>
+                    <td> <%= shortUrl.clicks %> </td>
+                </tr>
+
+           <% }) %>
+         
         </tbody>
       </table>
     </div>
